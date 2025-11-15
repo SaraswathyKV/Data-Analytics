@@ -1,0 +1,60 @@
+import numpy as np
+a1 = np.array([1,2,3,4,5,6,7])
+print(a1[1:5])
+print(a1[4])
+print(a1[:4])
+a2 = np.array([[1,2,3,4,5], [6,7,8,9,10]])
+print(a2[1,1:4])
+print(a2[0:2,2])
+print(a2[1:, :5])
+print(a2.shape)
+a3 = np.array([[[10,11,12],[13,14,15],[16,17,18]],
+               [[20,21,22],[23,24,25],[26,27,28]],
+               [[30,31,32],[33,34,35],[36,37,38]]])
+print(a3[:2,1:,:])
+arr = np.array([1,2,3,4,5])
+cpy = arr.copy()
+cpy[0] = 42
+print(arr)
+print(cpy)
+view = arr.view()
+view[0] = 42
+print(arr)
+print(view)
+a = np.array([[1,2,3],
+             [4,5,6]])
+a.shape
+print(np.append(a, [7,8,9]))
+print(np.append(a, [[7,8,9]],axis=0))
+print(np.append(a, [[5],[8]],axis=1))
+a = np.array([[1,2],
+              [3,4],
+              [5,6]])
+print(np.insert(a,3,[11,12]))
+print(np.insert(a,1,[11,12],axis=0))
+print(np.insert(a,1,[11,12,13],axis=1))
+a = np.array([[1,2,3,12],
+            [9,5,6,11],
+            [8,4,10,7]])
+print(np.delete(a,4))
+print(np.delete(a,1,axis=1))
+print(np.delete(a,1,axis=0))
+a = np.array([1,2,3])
+b = np.array([4,5,6])
+print(a,b)
+print(np.ndim(a),np.ndim(b))
+result = np.hstack((a,b))
+print(result)
+print(np.ndim(result))
+result = np.vstack((a,b))
+print(result)
+print(np.ndim(result))
+arr1 = np.array([[2,4],[6,8]])
+arr2 = np.array([[3,5],[7,9]])
+arr3 = np.array([[3], [9]])
+arr4 = np.array([[4],[8]])
+print(arr3.shape,arr4.shape)
+new = np.concatenate((arr1,arr2),axis=0)
+print(new,new.shape)
+new = np.concatenate((arr3,arr4),axis=1)
+print(new)
